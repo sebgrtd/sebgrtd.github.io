@@ -1,0 +1,11 @@
+.navbar .active{
+    border-bottom: 2px solid #007BFF !important;
+}
+
+.navbar{
+    transition: background 0.3s ease;
+} 
+
+.navbar-dark{
+    transition: background 0.3s ease;
+}

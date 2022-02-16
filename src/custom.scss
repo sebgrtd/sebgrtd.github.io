@@ -1,0 +1,11 @@
+// overwrite theme variables
+
+// good-looking theme
+$primary: #0274CB;
+
+$btn-border-radius-lg: 2rem;
+$btn-border-radius: 1rem;
+$btn-border-radius-sm: 0.75rem;
+
+// import bootstrap styles at the bottom!
+@import '~bootstrap/scss/bootstrap.scss';
