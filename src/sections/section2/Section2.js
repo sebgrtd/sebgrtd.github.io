@@ -1,15 +1,38 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import './Section2.css'
 
 export default function Section2() {
+  const containerRef = useRef()
+  const [titleVisible, setTitleVisible] = useState(false)
+  const [textVisible, setTextVisible] = useState(false)
+  useEffect(() => {
+    window.addEventListener('scroll', () =>{
+      const windowHeight = window.innerHeight;
+      const revealTop = containerRef.current.getBoundingClientRect().top;
+      const revealpoint = 550;
+      if(revealTop < windowHeight - revealpoint){
+        setTitleVisible(true)
+        setTimeout(() =>{
+          setTextVisible(true)
+        },800)
+      }
+      else{
+        setTitleVisible(false)
+        setTimeout(() =>{
+          setTextVisible(false)
+        },800)
+      }
+    })
+  }, [])
+
   return (
-    <div style={{backgroundImage: "url(/img/background-p-2.svg)"}} className='background d-flex align-items-center'>
-        <Container className='py-5 text-light'>
-            <h1 className='text-center pt-5'>Mais laissez moi me présenter...</h1>
+    <div style={{backgroundImage: "url(/img/background-p-2.svg)"}} className='background d-flex align-items-center'> 
+        <Container className='py-5 text-light' ref={containerRef}>
+            <h1 className={'text-center pt-5' + (titleVisible ? ' visible' : ' not-visible')}>Mais laissez moi me présenter...</h1>
             <Container className='py-3 d-flex flex-column flex-xxl-row-reverse align-items-center gap-4'>
-                <img src={process.env.PUBLIC_URL + '/img/undraw_mathematics.svg'} className='img-fluid'></img>
-                <div className='text-presentation-container pt-5'>
+                <img src={process.env.PUBLIC_URL + '/img/undraw_mathematics.svg'} className={'img-fluid' + (textVisible ? ' img-visible' : ' img-not-visible')}></img>
+                <div className={'text-presentation-container pt-5' + (textVisible ? ' visible' : ' not-visible')}>
                   <div>
                     <h2>Qui suis-je?</h2>
                     <p>Lycéen de 17 ans né à Calais, je suis le benjamin d’une famille de trois enfants. Je me passione pour l'informatique, la programmation, le développement ou encore les jeux vidéo. Parralélement, je porte un certain intêret à la cuisine et la pâtisserie.</p>

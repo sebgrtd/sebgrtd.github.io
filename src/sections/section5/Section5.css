@@ -7,3 +7,52 @@
     }
 
 }
+
+#section4 .title{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1.3s ease;
+}
+
+#section4 .title-visible{
+    opacity: 1;
+    transform: translateX(-50%);
+    transition: all 1.3s ease;
+}
+
+#section4 .illustration{
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 1.3s ease;
+}
+
+#section4 .img-visible{
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1.3s ease;
+}
+
+#section4 .texte-presentation{
+    font-size: 18px !important;
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 1.3s ease;
+}
+
+#section4 .text-visible{
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1.3s ease;
+}
+
+#section4 .container-projets{
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 1.3s ease;
+}
+
+#section4 .projets-visible{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1.3s ease;
+}

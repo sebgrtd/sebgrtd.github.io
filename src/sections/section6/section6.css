@@ -3,11 +3,32 @@
     height:333px;
 }
 
-.container-band-title h1{
+.container-band-title .title{
     margin-top: 5rem !important;
     font-size: 50px !important;
     font-weight: 700 !important;
     text-align: center !important;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 1.3s ease;
+}
+
+.container-band-title .title-visible{
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1.3s ease;
+}
+
+#section5 .container-slider{
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 1.3s ease;
+}
+
+#section5 .slider-visible{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1.3s ease;
 }
 
 @media (min-width: 768px)

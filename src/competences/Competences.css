@@ -1,3 +1,52 @@
 .imgContainer .close-icon{
     left: 85%;
+    opacity: 1;
 }
+
+#section3 .fade-enter .container-voirplus .texts{
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(-50%);
+  }
+
+#section3 .fade-enter.fade-enter-active .container-voirplus .texts{
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1.3s ease;
+  }
+
+#section3 .fade-exit .container-voirplus .texts{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+#section3 .fade-exit.fade-exit-active .container-voirplus .texts{
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 1.3s ease;
+  }
+
+
+
+#section3 .fade-enter .container-voirplus .illustration{
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(50%);
+  }
+
+#section3 .fade-enter.fade-enter-active .container-voirplus .illustration{
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1.3s ease;
+  }
+
+#section3 .fade-exit .container-voirplus .illustration{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+#section3 .fade-exit.fade-exit-active .container-voirplus .illustration{
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 1.3s ease;
+  }

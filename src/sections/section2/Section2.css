@@ -22,3 +22,28 @@
         font-size: 54px;
     }
  }
+
+#section2 .not-visible{
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 1.3s ease;
+}
+
+#section2 .img-not-visible{
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 1.3s ease;
+}
+
+#section2 .img-visible{
+    transform:translateX(0);
+    opacity: 1;
+    transition: all 1.3s ease;
+}
+
+#section2 .visible{
+    transform:translateX(0);
+    opacity: 1;
+    transition: all 1.3s ease;
+}
+

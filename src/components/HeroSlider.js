@@ -35,7 +35,7 @@ const HeroSlider = () => {
                     <Container className="slider-container p-5 bg-dark text-center d-flex flex-column justify-content-evenly">
                         <Container>
                             <Container className='text-primary' >
-                                <h1 className='d-md-inline m-3 m-md-5' style={{fontWeight: 700, fontSize: '35px' }}>la Cryptomonnaie</h1>
+                                <h1 className='d-md-inline m-3 m-md-5' style={{fontWeight: 700, fontSize: '35px' }}>la Crypto-monnaie</h1>
                                 <img className='d-md-inline' src={process.env.PUBLIC_URL + '/img/currency-bitcoin.svg'}></img>
                             </Container>
                             <Container className='d-flex flex-column flex-md-row justify-content-evenly text-start text-light mt-5'>

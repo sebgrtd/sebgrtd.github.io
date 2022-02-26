@@ -7,15 +7,20 @@ import Section3 from './sections/section3/Section3';
 import Section2 from './sections/section2/Section2';
 import Section1 from './sections/section1/Section1';
 import NavBar from './components/NavBar';
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+
 
 import Competence from './competences/Competence';
 
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useLocation} from 'react-router-dom';
 
 
 
 
 function App() {
+  const location = useLocation();
+
+
   return (
     <>
       <NavBar />
@@ -26,12 +31,16 @@ function App() {
         <Section2 />
       </section>
       <section id="section3">
-        <Routes>
-          <Route path='/' element={<Section3 />} />
+      <TransitionGroup component={null}>
+      <CSSTransition key={location.key} classNames="fade" timeout={1300}>
+        <Routes location={location}>
+          <Route path='/' element={<Section3 />}/>
           <Route path='/voirplus' element={<Competence />} />
         </Routes>
+        </CSSTransition>
+        </TransitionGroup>
       </section>
-      <section className='bg-dark'>
+      <section className='bg-dark' id="section3-2">
         <Section4 />
       </section>
       <section id="section4">

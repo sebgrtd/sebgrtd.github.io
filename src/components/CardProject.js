@@ -1,9 +1,16 @@
 import React from 'react';
 import './CardProject.css'
-import {Container, Button} from 'react-bootstrap'
+import {Modal, Button} from 'react-bootstrap'
+import { useState } from 'react';
 
 export default function Card(props) {
-  return <div className="card-container">
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return <>
+  <div className="card-container">
     <div className='card-body bg-dark text-light justify-content-between'>
       <div className='all-content-container'>
          <div className='img-lang-container p-1'>
@@ -13,8 +20,21 @@ export default function Card(props) {
           <h2 className='text-primary d-md-block'>{props.title}</h2>
         <p className='lead mt-3'>{props.text}</p>
       </div>
-      <Button className='btn-primary mt-3'>Voir plus</Button>
-      <a href={props.github} class="btn btn-secondary btn-sm mx-2 mt-3">Voir sur GitHub</a>
+      <Button className='btn-primary mt-3' onClick={handleShow}>Voir plus</Button>
+      <a target="_blank" rel="noopener noreferrer" href={props.github} class="btn btn-secondary btn-sm mx-2 mt-3">Voir sur GitHub</a>
     </div>
-  </div> ;
+  </div>
+  <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>{props.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{props.text}</Modal.Body>
+        <Modal.Footer>
+          <Button style={{borderRadius:'8px'}} variant="secondary" onClick={handleClose}>
+            Fermer
+          </Button>
+        </Modal.Footer>
+      </Modal>
+  </>
+  ;
 }

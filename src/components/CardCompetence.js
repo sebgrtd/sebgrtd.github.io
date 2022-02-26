@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 export default function CardCompetence(props) {
   const navigate = useNavigate();
 
-  return <div className="card-competence-container">
+  return <div className={'card-competence-container' + (props.isVisible ? ' visible' : '')}>
     <div style={{height:'480px', width:'300px'}} className='card-body bg-dark text-light d-flex flex-column justify-content-between'>
         <div>
             <h3 className='text-primary text-center'>{props.title}</h3>
