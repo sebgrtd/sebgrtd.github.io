@@ -21,7 +21,7 @@ export default function Card(props) {
         <p className='lead mt-3'>{props.text}</p>
       </div>
       <Button className='btn-primary mt-3' onClick={handleShow}>Voir plus</Button>
-      <a target="_blank" rel="noopener noreferrer" href={props.github} class="btn btn-secondary btn-sm mx-2 mt-3">Voir sur GitHub</a>
+      <a target="_blank" rel="noopener noreferrer" href={props.github} className="btn btn-secondary btn-sm mx-2 mt-3">Voir sur GitHub</a>
     </div>
   </div>
   <Modal show={show} onHide={handleClose} centered>

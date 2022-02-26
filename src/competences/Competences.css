@@ -31,7 +31,7 @@
 #section3 .fade-enter .container-voirplus .illustration{
     opacity: 0;
     z-index: 1;
-    transform: translateX(50%);
+    transform: translateX(-50%);
   }
 
 #section3 .fade-enter.fade-enter-active .container-voirplus .illustration{
@@ -49,4 +49,31 @@
     opacity: 0;
     transform: translateX(50%);
     transition: all 1.3s ease;
+  }
+
+
+#section3 .fade-enter .container-voirplus .wave{
+    opacity: 0;
+    display: none;
+    transform: translateX(-50%);
+}
+
+#section3 .fade-enter.fade-enter-active .container-voirplus .wave{
+    opacity: 1;
+    transform: translateX(0);
+    display: none;
+    transition: all 1.3s ease;
+  }
+
+#section3 .fade-exit .container-voirplus .wave{
+    opacity: 1;
+    transform: translateX(0);
+    display: none;
+  }
+
+#section3 .fade-exit.fade-exit-active .container-voirplus .wave{
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 1.3s ease;
+    display: none;
   }

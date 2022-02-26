@@ -13,16 +13,21 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Competence from './competences/Competence';
 
 import {Routes, Route, useLocation} from 'react-router-dom';
-
-
+import {useEffect, useRef} from 'react';
 
 
 function App() {
   const location = useLocation();
+  const sectionContainerRef = useRef();
+  const section3Ref = useRef();
+
+  function applyHeight(){
+    section3Ref.current.style.height = sectionContainerRef.current.clientHeight + 'px'
+  }
 
 
   return (
-    <>
+    <div style={{overflow: 'hidden'}}>
       <NavBar />
       <section id="section1">
         <Section1 />
@@ -30,15 +35,18 @@ function App() {
       <section id="section2">
         <Section2 />
       </section>
-      <section id="section3">
-      <TransitionGroup component={null}>
-      <CSSTransition key={location.key} classNames="fade" timeout={1300}>
-        <Routes location={location}>
-          <Route path='/' element={<Section3 />}/>
-          <Route path='/voirplus' element={<Competence />} />
-        </Routes>
-        </CSSTransition>
+      <section id="section3" ref={section3Ref}>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} classNames="fade" timeout={1300} > 
+          <div style={{position: 'absolute'}} ref={sectionContainerRef} >
+            <Routes>
+              <Route path='/' element={<Section3 onLoad={applyHeight} />}/>
+              <Route path='/voirplus' element={<Competence onLoad={applyHeight} />} />
+            </Routes>
+          </div>
+          </CSSTransition>
         </TransitionGroup>
+        {/* https://codesandbox.io/s/6l1li?file=/src/main.css:299-713 pour comprendre transitiongroup*/}
       </section>
       <section className='bg-dark' id="section3-2">
         <Section4 />
@@ -50,7 +58,7 @@ function App() {
         <Section6 />
       </section>
       <Footer />
-    </>
+    </div>
   );
 }
 

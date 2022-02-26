@@ -3,7 +3,7 @@ import './Section3.css'
 import CardCompetence from '../../components/CardCompetence'
 import { Container } from 'react-bootstrap'
 
-export default function Section3() {
+export default function Section3(props) {
   const [card1Visible, setCard1Visible] = useState(false)
   const [card2Visible, setCard2Visible] = useState(false)
   const [card3Visible, setCard3Visible] = useState(false)
@@ -12,6 +12,7 @@ export default function Section3() {
 
   const containerRef = useRef()
   useEffect(() => {
+    
     const windowHeight = window.innerHeight;
     const revealTop = containerRef.current.getBoundingClientRect().top;
     const revealpoint = 550;
@@ -72,6 +73,9 @@ export default function Section3() {
         },800)
       }
     })
+    setTimeout(() => {
+        props.onLoad();
+      }, 100)  
   }, [])
 
   return (
