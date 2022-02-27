@@ -43,7 +43,7 @@ export default function Competence(props) {
               <p> {location.state?.t2} </p>
             </div>
           </div>
-          <img className='illustration img-fluid' style={{maxHeight: '300px'}} src={process.env.PUBLIC_URL + '/img/' + location.state?.img}></img>  
+          <img className='illustration img-fluid pb-5' style={{maxHeight: '300px'}} src={process.env.PUBLIC_URL + '/img/' + location.state?.img}></img>  
         </Container>
       </div>
     </div>

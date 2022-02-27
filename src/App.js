@@ -13,7 +13,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Competence from './competences/Competence';
 
 import {Routes, Route, useLocation} from 'react-router-dom';
-import {useEffect, useRef} from 'react';
+import {useRef} from 'react';
 
 
 function App() {
@@ -22,12 +22,16 @@ function App() {
   const section3Ref = useRef();
 
   function applyHeight(){
+    while(sectionContainerRef.current == null)
+    {
+      
+    }
     section3Ref.current.style.height = sectionContainerRef.current.clientHeight + 'px'
   }
 
 
   return (
-    <div style={{overflow: 'hidden'}}>
+    <div>
       <NavBar />
       <section id="section1">
         <Section1 />
@@ -35,12 +39,12 @@ function App() {
       <section id="section2">
         <Section2 />
       </section>
-      <section id="section3" ref={section3Ref}>
+      <section id="section3" style={{position:'relative'}} ref={section3Ref}>
         <TransitionGroup component={null}>
           <CSSTransition key={location.key} classNames="fade" timeout={1300} > 
           <div style={{position: 'absolute'}} ref={sectionContainerRef} >
             <Routes>
-              <Route path='/' element={<Section3 onLoad={applyHeight} />}/>
+              <Route path='/' element={<Section3 onLoad={applyHeight} on />}/>
               <Route path='/voirplus' element={<Competence onLoad={applyHeight} />} />
             </Routes>
           </div>

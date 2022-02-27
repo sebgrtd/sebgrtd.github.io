@@ -37,8 +37,8 @@ export default function Section4() {
   }, [])
 
   return (
-    <div ref={containerRef}>
-    <img style={{width: '100%', maxWidth:'750px', position: 'absolute', right:'0', zIndex:'1'}} src={process.env.PUBLIC_URL + '/img/blob-top-3.svg'} className='img-fluid'></img>
+    <div ref={containerRef} style={{position:'relative'}}>
+    <img style={{width: '100%', maxWidth:'750px', position: 'absolute', right:'0', top:'0', zIndex:'1'}} src={process.env.PUBLIC_URL + '/img/blob-top-3.svg'} className='img-fluid'></img>
     <Container style={{zIndex:'2', position:'relative', minHeight:'100vh'}} className='d-flex flex-column justify-content-evenly p-5 p-lg-0'>
         <Container className='d-flex flex-column flex-md-row align-items-center' ref={first}>
             <img style={{width: '75%', maxWidth:'350px'}} src={process.env.PUBLIC_URL + '/img/bootstrap-icon.svg'} className={'img-fluid logo logo-1' + (image1Visible ? ' img-visible' : '' )} ></img>

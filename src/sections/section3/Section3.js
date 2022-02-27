@@ -3,16 +3,21 @@ import './Section3.css'
 import CardCompetence from '../../components/CardCompetence'
 import { Container } from 'react-bootstrap'
 
-export default function Section3(props) {
+export default function Section3(props){
   const [card1Visible, setCard1Visible] = useState(false)
   const [card2Visible, setCard2Visible] = useState(false)
   const [card3Visible, setCard3Visible] = useState(false)
   const [card4Visible, setCard4Visible] = useState(false)
   const [titleVisible, setTitleVisible] = useState(false)
 
+
+
   const containerRef = useRef()
-  useEffect(() => {
-    
+  
+  function animationOnScroll(timeout){
+    if (containerRef.current == null){
+        return null
+    }
     const windowHeight = window.innerHeight;
     const revealTop = containerRef.current.getBoundingClientRect().top;
     const revealpoint = 550;
@@ -25,9 +30,9 @@ export default function Section3(props) {
               setCard3Visible(true)
               setTimeout(() =>{
                   setCard4Visible(true)
-              },400)
-          },400)
-      },400)
+              },timeout)
+          },timeout)
+      },timeout)
     }
     else{
     setTitleVisible(false)
@@ -38,44 +43,18 @@ export default function Section3(props) {
               setCard3Visible(false)
               setTimeout(() =>{
                   setCard4Visible(false)
-              },400)
-          },400)
-      },400)
+              },timeout)
+          },timeout)
+      },timeout)
     }
+  }
+
+  useEffect(() => {
+    animationOnScroll(400);
     window.addEventListener('scroll', () =>{
-      const windowHeight = window.innerHeight;
-      const revealTop = containerRef.current.getBoundingClientRect().top;
-      const revealpoint = 550;
-      if(revealTop < windowHeight - revealpoint){
-        setTitleVisible(true)
-        setCard1Visible(true)
-        setTimeout(() =>{
-            setCard2Visible(true)
-            setTimeout(() =>{
-                setCard3Visible(true)
-                setTimeout(() =>{
-                    setCard4Visible(true)
-                },800)
-            },800)
-        },800)
-      }
-      else{
-        setTitleVisible(false)
-        setCard1Visible(false)
-        setTimeout(() =>{
-            setCard2Visible(false)
-            setTimeout(() =>{
-                setCard3Visible(false)
-                setTimeout(() =>{
-                    setCard4Visible(false)
-                },800)
-            },800)
-        },800)
-      }
+      animationOnScroll(800)
     })
-    setTimeout(() => {
-        props.onLoad();
-      }, 100)  
+    props.onLoad();  
   }, [])
 
   return (

@@ -24,7 +24,7 @@ export default function Section1() {
   })
 
   return (
-    <div style={{position:'relative', minHeight:'100vh'}} className="section1-container d-flex align-items-center justify-content-between">
+    <div style={{position:'relative', minHeight:'100vh', overflow:'hidden'}} className="section1-container d-flex align-items-center justify-content-between">
         <Container style={{ marginBottom:'8%' }} className='d-flex flex-column align-items-center'>
             <div className='section1-image rounded-circle border border-5 border-primary' ref={imgRef}>
                 <img style={{width:'256px', height:'256px', borderRadius:'50%', objectFit:'cover'}} src={process.env.PUBLIC_URL + '/img/photo-profil.jpg'} className='img-fluid'></img>

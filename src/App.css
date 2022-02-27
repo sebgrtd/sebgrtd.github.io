@@ -1,7 +1,6 @@
-body{
-    overflow-x: hidden;
+#root{
+    overflow: hidden;
 }
-
 
 ::-webkit-scrollbar{
     width: 10px;
