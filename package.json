@@ -1,5 +1,5 @@
 {
-  "homepage": "https://sebgrtd.github.io",
+  "homepage": "https://sebgrtd.github.io/",
   "name": "bootstrap-slider",
   "version": "0.1.0",
   "private": true,
@@ -66,7 +66,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
