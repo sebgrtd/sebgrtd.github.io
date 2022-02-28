@@ -3,6 +3,24 @@
     opacity: 1;
 }
 
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+
+  transition: all 1.3s ease;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+
+  transition: all 1.3s ease;
+}
+
 #section3 .fade-enter .container-voirplus .texts{
     opacity: 0;
     z-index: 1;

@@ -13,7 +13,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Competence from './competences/Competence';
 
 import {Routes, Route, useLocation} from 'react-router-dom';
-import {useRef} from 'react';
+import {useRef, useEffect} from 'react';
 
 
 function App() {
@@ -29,6 +29,13 @@ function App() {
     section3Ref.current.style.height = sectionContainerRef.current.clientHeight + 'px'
   }
 
+  useEffect(() => {
+    while (section3Ref.current == null){
+
+    }
+    applyHeight();
+    console.log('height applied')
+  }, [])
 
   return (
     <div>
