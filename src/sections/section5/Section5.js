@@ -10,7 +10,6 @@ export default function Section5() {
 
   const getProjects = () => {
     Axios.get("https://portfolio-seb-grtd.herokuapp.com/getprojects", {
-      
     })
     .then((res) => {
       console.log(res);

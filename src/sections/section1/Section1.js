@@ -31,7 +31,7 @@ export default function Section1() {
             </div>
             <h1 className='mt-5 text-center text-dark' ref={titleRef} >Moi c'est <span className='text-primary'>Sébastien</span></h1>
             <p style={{fontSize:'16px'}} ref={paragraphRef} >Lycéen</p>
-            <a href="#section2" className="btn btn-primary btn-lg mt-5" ref={btnRef}>Voir ma présentation</a>
+            <a href="#section2" className="btn btn-primary btn-lg" ref={btnRef}>Voir ma présentation</a>
         </Container>
         <img src={process.env.PUBLIC_URL + '/img/wave-bot-1.svg'} className='wave img-fluid'></img>
     </div>

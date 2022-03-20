@@ -10,8 +10,6 @@ export default function Section3(props){
   const [card4Visible, setCard4Visible] = useState(false)
   const [titleVisible, setTitleVisible] = useState(false)
 
-
-
   const containerRef = useRef()
   
   function animationOnScroll(timeout){

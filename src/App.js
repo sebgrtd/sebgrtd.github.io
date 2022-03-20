@@ -33,8 +33,9 @@ function App() {
     while (section3Ref.current == null){
 
     }
-    applyHeight();
-    console.log('height applied')
+    setTimeout(() => {
+      applyHeight();
+    }, 1500);
   }, [])
 
   return (

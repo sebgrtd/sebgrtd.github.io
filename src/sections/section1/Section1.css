@@ -13,6 +13,7 @@
 .section1-container .btn{
     opacity: 0;
     transition: all 0.5s ease;
+    margin-top: 3rem;
 }
 
 .section1-image{
@@ -26,6 +27,17 @@
     min-height: 100px;
     object-fit: cover;
     animation: firstanim 5s ease;
+}
+
+@media screen and (max-height: 700px) {
+    #section1{
+        margin-top: 5rem;
+    }
+
+    #section1 .btn{
+        margin-bottom: 8rem;
+    }
+
 }
 
 @keyframes firstanim {
