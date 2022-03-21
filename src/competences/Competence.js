@@ -27,7 +27,7 @@ export default function Competence(props) {
     <div ref={containerRef}>
       <div className='imgContainer' >
         <img style={{minHeight:'300px', objectFit:'cover'}} src={process.env.PUBLIC_URL + '/img/wave-top-1.svg'} className='img-fluid'></img>
-        <Link to="/"><img className='title close-icon' src={process.env.PUBLIC_URL + '/img/close-icon.svg'}></img></Link>  
+        <Link to="/"><img className='title close-icon' src={process.env.PUBLIC_URL + '/img/close-icon.svg'}></img></Link>
       </div>
       <div className='d-flex align-items-center py-5 container-voirplus' ref={texts}>
         <Container className='d-flex flex-column-reverse flex-xl-row px-5 px-lg-0 py-5 gap-5'>

@@ -29,7 +29,7 @@ export default function Section2() {
   return (
     <div style={{backgroundImage: "url(/img/background-p-2.svg)"}} className='background d-flex align-items-center'> 
         <Container className='py-5 text-light' ref={containerRef}>
-            <h1 className={'text-center pt-5' + (titleVisible ? ' visible' : ' not-visible')}>Mais laissez moi me présenter...</h1>
+            <h1 className={'text-center pt-5' + (titleVisible ? ' visible' : ' not-visible')}>Laissez moi me présenter...</h1>
             <Container className='py-3 d-flex flex-column flex-xxl-row-reverse align-items-center gap-4'>
                 <img src={process.env.PUBLIC_URL + '/img/undraw_mathematics.svg'} className={'img-fluid' + (textVisible ? ' img-visible' : ' img-not-visible')}></img>
                 <div className={'text-presentation-container pt-5' + (textVisible ? ' visible' : ' not-visible')}>

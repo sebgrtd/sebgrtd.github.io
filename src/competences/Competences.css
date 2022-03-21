@@ -1,6 +1,15 @@
-.imgContainer .close-icon{
-    left: 85%;
-    opacity: 1;
+#section3 .close-icon{
+  left: 85%;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.295);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.7s ease;
+}
+
+#section3 .close-icon:hover{
+  filter: brightness(1.2);
+  transition: all 0.7s ease;
 }
 
 .fade-enter {
@@ -95,3 +104,4 @@
     transition: all 1.3s ease;
     display: none;
   }
+

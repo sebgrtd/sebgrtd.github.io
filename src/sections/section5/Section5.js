@@ -51,7 +51,7 @@ export default function Section5() {
 
   return <div ref={containerRef}>
     <div style={{height:'330px'}} className='imgContainer'>
-          <img  src={process.env.PUBLIC_URL + '/img/blob-top-2.svg'} className='img-fluid'></img>
+          <img alt='blob de couleur' src={process.env.PUBLIC_URL + '/img/blob-top-2.svg'} className='img-fluid'></img>
           <h1 className={'title text-dark' + (titleVisible ? ' title-visible' : '')}>MES PROJETS</h1>
     </div>
     <Container className='d-flex flex-column flex-lg-row justify-content-between align-items-center'>
@@ -64,7 +64,7 @@ export default function Section5() {
      </Container>
     <div className={'container-projets ' +(projectsVisible ? 'projets-visible' : '')}>
       <Wrapper>
-        { projectList.map((val, key) => {
+        { projectList.slice(0).reverse().map((val, key) => {
           return(
           <Card key={key}
           title={val['titre']} 
@@ -76,6 +76,6 @@ export default function Section5() {
         )}) }
       </Wrapper> 
     </div>
-    <img style={{width: '100%', margin:'0'}} src={process.env.PUBLIC_URL + '/img/wave-top-2.svg'} className='img-fluid'></img>
+    <img alt='vague' style={{width: '100%', margin:'0'}} src={process.env.PUBLIC_URL + '/img/wave-top-2.svg'} className='img-fluid'></img>
   </div>;
 }
